@@ -204,4 +204,4 @@ $RECYCLE.BIN/
 .nfs*
 
 ### Yusheng's direnv settings
-.direnv
+.envrc
