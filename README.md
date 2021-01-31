@@ -50,3 +50,9 @@ Game outline:
 - The user wins if they arrive within a distance from the minimal target point.
 - The user will be punished if he goes to a point in the parameter space with lower cost to the place with a higher cost
 - This game is inspired by the masochistic game "Getting Over It with Bennett Foddy". Hopefully, by blindly and hopelessly traversing through the high-dimensional parameter space with the help of few projections, the player will understand why a VQE is in general a hard task to accomplish.
+
+
+![GamePlay](./GamePlay.png "Actual GamePlay")
+## Comparison between DWave and ionQ
+
+- For small dataset, DWave only requires about 10 seconds to output the optimal answer. However, for ionQ it would take much longer both for the player and classical optimization routines. That is even without the consideration of noises in the NISQ era machines.
