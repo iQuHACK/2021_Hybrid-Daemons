@@ -48,7 +48,7 @@ class PlayGround:
 
     def __init__(self, vals, weights, max_weight, shots=8192):
 
-        self.provider = IonQProvider(token='laldTW63uAIPEfNaJwfljDU6OT3p7bKr')
+        self.provider = IonQProvider(token='my_token')
 
         # Get an IonQ simulator backend to run circuits on:
         self.backend = self.provider.get_backend("ionq_simulator")
