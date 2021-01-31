@@ -27,6 +27,10 @@ We first started with the idea of the balanced assignment problem which has para
 
 We then begin with the unbalanced assignment problem where the size of the number of agents A is not equal to number of tasks T. Here, we take the case where A<T. In addition, each task has to be completed a certain number of times which is chosen randoml. Thus, we have a 1-D task array of length T which has the values as to how many times that specific task has to be completed. This is an equality constraint. Thus each agent can either do a certain number of tasks modelled as the discrete variables in DQM. There is also an upper bound  𝑈 on the number of tasks that each agent can do. We validate against the fulfillment of the constraints in our solution.
 
+Future works on this project include:
+1. More detailed survey of the constraints that can be implemented in the DQM framework. Try to look for simulated annealing based solutions as well and compare the performances of the two. 
+2. We can model the preferences of the agents as to how many tasks they want to perform and allot a schedule comfortable to everyone's needs. 
+3. This model can work as a sub-module in nurse-scheduling with complicated constraints and far more steps. 
 
 
 ## Gate-based VQE Game
