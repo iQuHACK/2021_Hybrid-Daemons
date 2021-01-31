@@ -7,7 +7,7 @@ To represent the effect of any decision by numerical values, the outcome of the 
 
 The knapsack problem can be formally defined as follows: We are given an item set N, consisting of n items j with profit Pj and weight Wj, and the capacity value c. The objective is to select a subset of N such that the total profit of the selected items is maximized and the total weight does not exceed c. (see more details here: https://en.wikipedia.org/wiki/Knapsack_problem)
 
-In this project, we work on solving the Knapsack problem with both gate-based game running on IonQ hardware and annealing-based DQM/BQM methods running on D-Wave hardware, and to compare between the two methods. We further show using the DQM solver to implement the bounded Knapsack problem, and also making an optimization game with the IonQ hardware.
+In this project, we work on solving the Knapsack problem with both gate-based game running on IonQ hardware and annealing-based DQM/BQM methods running on D-Wave hardware, and to compare between the two methods. We further show using the DQM solver to implement the bounded Knapsack problem.
 
 
 ## Annealing: Implement the bounded Knapsack problem with the DQM solver
@@ -20,6 +20,12 @@ Future works on this project include:
 2. Implement different variants of the Knapsack problem, e.g. by adding more constraints, adding m knapsacks with different capacities or optimizing the Unbounded Knapsack Problem where an unlimited amount of each item is available.
 3. Use Knapsack problem as a subroutine and combine it with other NP-hard problems to solve complicated tasks challenging to classical computers.
 4. In the stock selection application, we can better quantify the profits instead of just using earnings as the metric, and have more realistic assumptions.
+
+## Annealing: Implement the Balanced Assignment Problem as BQM and Unbalanced Assignment Problem as DQM
+
+We first started with the idea of the balanced assignment problem which has paramount importance in operations research and industries. We solved it using D-wave Ocean Binary Quadratic Model (BQM) solver where we allot n agents to n tasks such that each agent is alloted to one task and vice-versa. The central objeective is to maximize the efficiency of this model where each agent has a certain efficiency to solve every given task (implemented randomly as a 2-D matrix). We compare our performance with the classical 'Hungarian Algorithm' by comparing the Hamming Distances between the two as a function of the Lagrange multiplier used in annealing based problems. We try to calculate an optimal number of steps if the Hamming distance becomes zero. 
+
+We then begin with the unbalanced assignment problem where the size of the number of agents A is not equal to number of tasks T. Here, we take the case where A<T. In addition, each task has to be completed a certain number of times which is chosen randoml. Thus, we have a 1-D task array of length T which has the values as to how many times that specific task has to be completed. This is an equality constraint. Thus each agent can either do a certain number of tasks modelled as the discrete variables in DQM. There is also an upper bound  𝑈 on the number of tasks that each agent can do. We validate against the fulfillment of the constraints in our solution.
 
 
 
@@ -40,11 +46,3 @@ Game outline:
 - The user wins if they arrive within a distance from the minimal target point.
 - The user will be punished if he goes to a point in the parameter space with lower cost to the place with a higher cost
 - This game is inspired by the masochistic game "Getting Over It with Bennett Foddy". Hopefully, by blindly and hopelessly traversing through the high-dimensional parameter space with the help of few projections, the player will understand why a VQE is in general a hard task to accomplish.
-
-![GamePlay](./GamePlay.png "Actual GamePlay")
-## Comparison between DWave and ionQ
-
-- For small dataset, DWave only requires about 10 seconds to output the optimal answer. However, for ionQ it would take much longer both for the player and classical optimization routines. That is even without the consideration of noises in the NISQ era machines.
-- For large datasets, there is no guarantee that DWave will output the optimal answer. However, we have been given reasonable results from the DWave machine. While for such large datasets, it is too time consuming to evaluate the ionQ performance. 
-- That is acceptable for the focus of DWave is to solve such optimization problems. While ionQ aims for a more universal sense of Qunatum Computing. In the future, we would hope to see more noise-resilient backends from ionQ thus extending what we can do on Qunatum Computers in general.
-
