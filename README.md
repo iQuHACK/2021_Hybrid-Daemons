@@ -17,8 +17,8 @@ Knapsack problems appear in many real-world decision-making processes, including
 
 Future works on this project include:
 1. Study in more detail and quantitatively the actual quantum advantage of solving this NP-hard problem on large dataset over classical methods by running on real quantum computers. 
-2. Implement different variants of the Knapsack problem, e.g. by adding more constraints, adding m knapsacks with different capacities or optimizing the Unbounded Knapsack Problem where an unlimited amount of each item is availabl.
-3. Use Knapsack problem as a subroutine and combine it with other NP-hard problem to solve complicated tasks challenging to classical computers.
+2. Implement different variants of the Knapsack problem, e.g. by adding more constraints, adding m knapsacks with different capacities or optimizing the Unbounded Knapsack Problem where an unlimited amount of each item is available.
+3. Use Knapsack problem as a subroutine and combine it with other NP-hard problems to solve complicated tasks challenging to classical computers.
 4. In the stock selection application, we can better quantify the profits instead of just using earnings as the metric, and have more realistic assumptions.
 
 
