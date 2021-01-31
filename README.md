@@ -4,7 +4,7 @@ Ziwei Qiu, Ilan Mitnikov, Yusheng Zhao, Nakul Aggarwal , Victor Onofre
 
 
 ## Annealing: Implement the Knapsack problem with the DQM solver
-
+The knapsack problem (KP) can be formally defined as follows: We are given an item set $N$, consisting of $n$ items $j$ with profit $P_{j}$ and weight $W_{j}$, and the capacity value $c$.Then the objective is to select a subset of N such that the total profit of the selected items is maximized and the total weight does not exceed $c$. In this work, the Bounded Knapsack Problem, where we are allowed to take multiple pieces for each item so the variable can take discrete values 0,1,2,... up to b, is solved using the Discrete Quadratic Model (DQ). With a direct application in stock portofolio optimization.
 
 
 
