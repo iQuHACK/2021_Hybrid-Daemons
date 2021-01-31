@@ -3,12 +3,12 @@
 Ziwei Qiu, Ilan Mitnikov, Yusheng Zhao, Nakul Aggarwal , Victor Onofre 
 
 
-## Implement the Knapsack problem with the DQM solver
+## Annealing: Implement the Knapsack problem with the DQM solver
 
 
 
 
-## VQE Game
+## Gate-based: VQE Game
 
 Check out some info in the [event's repository](https://github.com/iQuHACK/2021) to get started.
 
