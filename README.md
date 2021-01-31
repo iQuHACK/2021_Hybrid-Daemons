@@ -32,9 +32,11 @@ However, in our game the user can take the optimization part into their own hand
 The solution using the annealing machine is used to evaluate how far the user is from the goal - the minimum energy point.
   
 Game outline:
-- The user starts from a random point in the parameter space (the parameters describe the circuit)
-- Then, because we are trying to optimize a high-dimensional problem, we cannot easily visualize the landscape of the cost.
-- To overcome that, we show the player multiple 3D views of the surrounding cost of different pairs of parameters
-- Then the challenge is, given the view of different projection of the local cost choose a step in the direction that minimizes the total cost
-  - This is basically a multidimensional navigation puzzle!!!
-- The user wins if they arrive within a distance from the minimal target point
+- The user starts from a random point in the parameter space (the parameters describe the ansatz circuit)
+- Then, because we are trying to optimize a high-dimensional problem, we cannot easily visualize the entire landscape of the cost. Even if we can, it will take up huge amount of resources to try and compute a high-dimensional grid around the starting point to see the landscape of the cost around it.
+- To overcome that, we show the player multiple 3D views of the surrounding cost of different pairs of parameters they choose.
+- Then the challenge is, given the view of different projection of the local cost choose a step in the direction that minimizes the total cost.
+- This is basically a multidimensional navigation puzzle!!!
+- The user wins if they arrive within a distance from the minimal target point.
+- The user will be punished if he goes to a point in the parameter space with lower cost to the place with a higher cost
+- This game is inspired by the masochistic game "Getting Over It with Bennett Foddy". Hopefully, by blindly and hopelessly traversing through the high-dimensional parameter space with the help of few projections, the player will understand why a VQE is in general a hard task to accomplish.
