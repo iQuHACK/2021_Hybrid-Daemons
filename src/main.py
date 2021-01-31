@@ -185,7 +185,6 @@ class PlayGround:
 
         for i, theta0 in enumerate(theta0r):
             for j, theta1 in enumerate(theta1r):
-
                 cur_param = prev_param
                 cur_param[which_params[0]] = theta0
                 cur_param[which_params[1]] = theta1
@@ -206,6 +205,11 @@ class PlayGround:
         # in reality, it will take too much time to do this step
         # for demonstration, just use random number generator
         energies = np.random.random((step, step))
+
+        # plot current location
+        ax.plot([theta0i] * 10, [theta1i] * 10, np.linspace(np.min(energies), np.max(energies), 10), 'or-',
+                alpha=0.8,
+                linewidth=1.5)
 
         ax.plot_surface(X,
                         Y,
@@ -231,7 +235,7 @@ class PlayGround:
         delta = np.pi / 100
         for i in range(self.num_params):
             j = input('How many steps for parameter {}?'.format(i))
-            changes[i] = j * delta
+            changes[i] = int(j) * delta
 
         return changes
 
@@ -242,7 +246,7 @@ class PlayGround:
             "Which two parameters would you like to see for the next energy landscape plot"
         )
 
-        var1, var2 = input("Enter two numbers between 0 and {1} here: ".format(
+        var1, var2 = input("Enter two numbers between 0 and {0} separated by a space: ".format(
             self.num_params)).split()
 
         return int(var1), int(var2)
@@ -282,7 +286,9 @@ class PlayGround:
 
             self.plot_energy_landscape(prev_param, vary_param,
                                        [-np.pi / 10, np.pi / 10],
-                                       [-np.pi / 10, np.pi / 10], 10)
+                                       [-np.pi / 10, np.pi / 10],
+                                       10,
+                                       )
             moves = self.ask_move()
             next_param = prev_param + moves
             prev_param = self.do_move(next_param)
@@ -293,11 +299,11 @@ class PlayGround:
         print("Brave Soul, congratulations!")
         print("Now you know the hard works a VQE has to do right?")
 
+
 ### loop in the main function until player either rage quits or reach the place
 
 
 def main():
-
     # declare the knapsack problem here
     vals = [1, 2, 3]
     weights = [2, 4, 5]
@@ -315,5 +321,4 @@ def main():
 
 
 if __name__ == "__main__":
-
     main()
