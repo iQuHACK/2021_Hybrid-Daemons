@@ -40,3 +40,10 @@ Game outline:
 - The user wins if they arrive within a distance from the minimal target point.
 - The user will be punished if he goes to a point in the parameter space with lower cost to the place with a higher cost
 - This game is inspired by the masochistic game "Getting Over It with Bennett Foddy". Hopefully, by blindly and hopelessly traversing through the high-dimensional parameter space with the help of few projections, the player will understand why a VQE is in general a hard task to accomplish.
+
+## Comparison between DWave and ionQ
+
+- For small dataset, DWave only requires about 10 seconds to output the optimal answer. However, for ionQ it would take much longer both for the player and classical optimization routines. That is even without the consideration of noises in the NISQ era machines.
+- For large datasets, there is no guarantee that DWave will output the optimal answer. However, we have been given reasonable results from the DWave machine. While for such large datasets, it is too time consuming to evaluate the ionQ performance. 
+- That is acceptable for the focus of DWave is to solve such optimization problems. While ionQ aims for a more universal sense of Qunatum Computing. In the future, we would hope to see more noise-resilient backends from ionQ thus extending what we can do on Qunatum Computers in general.
+
