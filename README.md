@@ -1,4 +1,15 @@
-# Welcome to iQuHACK 2021!
+# Team: qa_fold
+
+Ziwei Qiu, Ilan Mitnikov, Yusheng Zhao, Nakul Aggarwal , Victor Onofre 
+
+
+## Implement the Knapsack problem with the DQM solver
+
+
+
+
+## VQE Game
+
 Check out some info in the [event's repository](https://github.com/iQuHACK/2021) to get started.
 
 Having a README in your team's repository facilitates judging. A good README contains:
